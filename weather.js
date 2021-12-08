@@ -6,7 +6,6 @@ function handleApiResponse(apiData) {
   let HTML = '';
   const rainVol = getRainVol(apiData);
 
-  debugger;
   HTML += '<li><strong>Current weather conditions:</strong> ' + apiData.weather[0].main + ', ' + apiData.weather[0].description;
   HTML += '<li><strong>The current temperature, in celsius:</strong> ' + apiData.main.temp;
   HTML += '<li><strong>"Feels like" temperature, in celsius:</strong> ' + apiData.main.feels_like;
