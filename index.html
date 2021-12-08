@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>Weather App</title>
+  </head>
+
+  <body>
+    <label for="city">City:</label>
+    <input type="text" name="city" id="city" placeholder="Search for city here">
+    <button id="search" onclick="getDataFromAPI()">Get Weather Report</button>
+    <span id="errors"></span>
+    <div id="results">
+      <ul>
+        <li><strong>Current weather conditions</strong>:</li>
+        <li><strong>The current temperature, in celsius:</strong></li>
+        <li><strong>"Feels like" temperature, in celsius:</strong></li>
+        <li><strong> Humidity percentage:</strong></li>
+        <li><strong>Minimum temperature, in celsius:</strong></li>
+        <li><strong>Maximum temperature, in celsius:</strong></li>
+        <li><strong>Wind speed, in miles per hour:</strong></li>
+        <li><strong>Rain volume for the last hour, in millimeters:</strong></li>
+      </ul>
+    </div>
+    <script>
+      const apiKey = "9c6543e74e5ef0b3167c85493866b462";
+      const APIUrl = "https://api.openweathermap.org/data/2.5/weather?";
+
+      function getDataFromAPI() {
+        fetch(APIUrl + "q=London,uk&appid=" + apiKey)
+        .then(async r=> console.log(await r.text()))
+        .catch(e=>console.error("Boo..." + e));
+      }
+
+    </script>
+  </body>
+</html>
