@@ -1,0 +1,24 @@
+{
+  "name": "converted",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "is-buffer": "1.1.6",
+    "live-server": "1.2.1",
+    "remove-trailing-separator": "1.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/node": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "axios": "^0.24.0",
+    "babel-node": "0.0.1-security",
+    "node-fetch": "^3.1.0"
+  },
+  "scripts": {
+    "weather": "babel-node cli.js"
+  }
+}

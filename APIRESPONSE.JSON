@@ -1,0 +1,32 @@
+{coord: {lon: -0.1257, lat: 51.5085},…}
+base: "stations"
+clouds: {all: 75}
+all: 75
+cod: 200
+coord: {lon: -0.1257, lat: 51.5085}
+lat: 51.5085
+lon: -0.1257
+dt: 1638968482
+id: 2643743
+main: {temp: 7.97, feels_like: 7.03, temp_min: 6.04, temp_max: 9.42, pressure: 992, humidity: 71}
+feels_like: 7.03
+humidity: 71
+pressure: 992
+temp: 7.97
+temp_max: 9.42
+temp_min: 6.04
+name: "London"
+sys: {type: 2, id: 2019646, country: "GB", sunrise: 1638949983, sunset: 1638978728}
+country: "GB"
+id: 2019646
+sunrise: 1638949983
+sunset: 1638978728
+type: 2
+timezone: 0
+visibility: 10000
+weather: [{id: 803, main: "Clouds", description: "broken clouds", icon: "04d"}]
+0: {id: 803, main: "Clouds", description: "broken clouds", icon: "04d"}
+wind: {speed: 1.79, deg: 257, gust: 6.71}
+deg: 257
+gust: 6.71
+speed: 1.79

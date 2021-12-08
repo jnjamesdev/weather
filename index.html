@@ -1,43 +1,32 @@
 <html>
   <head>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Weather App</title>
   </head>
-
   <body>
     <label for="city">City:</label>
     <input type="text" name="city" id="city" placeholder="Search for city here">
-    <button id="search" onclick="getDataFromAPI()">Get Weather Report</button>
-    <span id="errors"></span>
+    <button id="search">Get Weather Report</button>
     <div id="results">
       <ul id="resultsList">
 
       </ul>
     </div>
-    <script>
-      const apiKey = "9c6543e74e5ef0b3167c85493866b462";
-      const APIUrl = "https://api.openweathermap.org/data/2.5/weather?";
-      /*
-        Call open weather map API on click of search button
-      */
-      function getDataFromAPI() {
-        axios.get(APIUrl + 'q=London,uk&appid=' + apiKey)
-        .then((response) => {
-          handleApiResponse(response.data)
-        });
-        // TODO: Handle error response
-      }
 
-      /*
-        Handle response from weather API
-      */
-      function handleApiResponse(apiData) {
-        let HTML = '';
-          HTML += '<li><strong>Current weather conditions:</strong>' + apiData.weather[0].main + ', ' +  apiData.weather[0]. description;
+    <br>
+    <span id="errors"></span>
+    <script src="weather.js"></script>
+    <script type="module">
+      import {getDataFromAPI} from './services/weatherAPIService.js';
 
-          document.getElementById('resultsList').innerHTML = HTML;
-      }
-
+      document.getElementById('search').addEventListener('click', async ()  => {
+        const city = document.getElementById('city').value;
+        const data = await getDataFromAPI(city)
+        if (data.cod === '404') {
+          handleError(data);
+        } else {
+          handleApiResponse(data);
+        }
+      });
     </script>
   </body>
 </html>
